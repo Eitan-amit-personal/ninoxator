@@ -1,0 +1,11 @@
+SUBSYSTEMS=="usb", DRIVERS=="usb", ATTRS{manufacturer}=="Teensyduino", ATTRS{idVendor}=="16c0", GOTO="_TEENSY_"
+GOTO="_END_"
+
+# Teensy
+LABEL="_TEENSY_"
+SUBSYSTEMS=="usb", DRIVERS=="cdc_acm", ATTRS{bInterfaceNumber}=="04", SYMLINK+="ttyGimbalMicroRos"
+
+# End
+LABEL="_END_"
+
+
